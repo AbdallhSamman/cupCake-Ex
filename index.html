@@ -1,0 +1,174 @@
+<html>
+  <head>
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+
+    <!-- jQuery and JS bundle w/ Popper.js -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
+    <script src="script/script.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <img src="/images/cupcake_icon.png" class="cubcake-img">
+      <a class="navbar-brand" href="#">Best Cupcakes</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">
+              Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">
+              Coustomer Name
+            </label>
+            <input
+              type="text"
+              class="form-control name"
+              placeholder="Your first Name"
+              
+            />
+            <span class="name-erorr-msg"></span>
+          </div>
+          
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">
+              Counter
+            </label>
+            <input
+              type="number"
+              class="form-control counter"
+              value=""
+              placeholder="How much you want to order"
+              
+            />
+            <span class="counter-erorr-msg"></span>
+          </div>
+          
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">
+              type
+              <select class="custom-select type" id="inputGroupSelect02">
+                <option selected value="0">Choose your cupcake type</option>
+                <option value="1">Chocolate</option>
+                <option value="2">Carrot</option>
+                <option value="3">Banana</option>
+                <option value="4"> Strawberry</option>
+                <option value="5">Peanut</option>
+              </select>
+              <span class="type-erorr-msg"></span>
+          </div>
+          
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">
+              Delivery Time
+              <select class="custom-select delivery" id="inputGroupSelect02">
+                <option selected value="0">Choose your cupcake type</option>
+                <option value="1">12 PM</option>
+                <option value="2">12:30 PM</option>
+                <option value="3">1:00 PM</option>
+                <option value="4">1:30 PM</option>
+                <option value="5">2:00 PM</option>
+                <option value="6">2:30 PM</option>
+                <option value="7">3:00 PM</option>
+                <option value="8">3:30 PM</option>
+                <option value="9">4:00 PM</option>
+              </select>
+              <span class="delivery-erorr-msg"></span>
+          </div>
+          
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">
+              Allergies
+              <select class="custom-select Allergies" id="inputGroupSelect02">
+                <option value="0">do you have Allergies</option>
+                <option value="1">None</option>
+                <option value="2">Dairy Free</option>
+                <option value="3">Nut Free</option>
+              </select>
+              <span class="Allergies-erorr-msg"></span>
+          </div>
+          
+          <br>
+          <button type="button" class="btn btn-primary submit-btn">
+            submit
+          </button>
+        </div>
+        <div class="col-sm-6">
+          <span id="welcome" class="welcome">Welcome user</span>
+          <button onclick="show_storage();" type="button" class="btn btn-info show">
+            Show
+          </button>
+
+          <div style="text-align:center;padding:1em 0;"> <h2><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/city/250441"><br />Amman, Jordan</a></h2> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=large&timezone=Asia%2FAmman" width="100%" height="140" frameborder="0" seamless></iframe> </div>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+
+                <th>Type</th>
+
+                <th>Weight</th>
+                
+              </tr>
+              
+            </thead>
+            <tbody id="cupcake-table">
+            
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
